@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Book Shop</title>
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+	<script src="/bootstrap.min.js"></script>
+	<script src="/bootstrap.bundle.min.js"></script>
+	<link href="/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+	<header th:replace="fragments/header :: header"></header>
+	<div class="container p-5 mx-auto">
+		<div class="card mb-3" th:each="book: ${books}">
+			<div class="card-body">
+				<div class="col">
+					<div class="row">
+						<h3 class="card-title">
+							<b th:text="${book.getAuthor()}"/> - <span th:text="${book.getTitle()}"/>
+							<span class="badge text-bg-secondary"
+								  th:text="'$ '+ ${#numbers.formatDecimal(book.getPrice(), 0, 'DEFAULT', 2, 'DEFAULT')}"/>
+						</h3>
+					</div>
+					<div class="row mb-3">
+						<a class="icon-link icon-link-hover" th:href="@{/book/{id}(id=${book.getId()})}">
+							Check details
+							<svg class="bi" aria-hidden="true">
+								<use xlink:href="#arrow-right"></use>
+							</svg>
+						</a>
+					</div>
+					<div class="row">
+						<form method="post" th:action="@{/cart_add}">
+							<input name="id" th:value="${book.getId()}" type="hidden"/>
+							<button class="btn btn-primary" type="submit">Add to cart</button>
+						</form>
+					</div>
+					<div class="row">
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

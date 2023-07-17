@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title th:text="${book.getTitle()}"></title>
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+	<script src="/bootstrap.min.js"></script>
+	<script src="/bootstrap.bundle.min.js"></script>
+	<link href="/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+	<header th:replace="fragments/header :: header"></header>
+	<div class="container p-5 mx-auto">
+		<div class="card">
+			<div class="card-body">
+				<div class="col">
+					<div class="row">
+						<h1 th:text="${book.getTitle()}"/>
+						<h3 th:text="${book.getAuthor()}"/>
+					</div>
+					<div class="row">
+						<b>Genre: </b>
+						<span th:text="${book.getGenre().getName()}"/>
+					</div>
+					<div class="row">
+						<b>Publisher: </b>
+						<span th:text="${book.getPublished()} + ' - ' + ${book.getPublisher()}"/>
+					</div>
+					<div class="row">
+						<b>Price: </b>
+						<h1><span class="badge text-bg-secondary"
+								  th:text="'$ '+ ${#numbers.formatDecimal(book.getPrice(), 0, 'DEFAULT', 2, 'DEFAULT')}"/>
+						</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="m-2">
+			<form method="post" th:action="@{/cart_add}">
+				<input name="id" th:value="${book.getId()}" type="hidden"/>
+				<button class="btn btn-primary" type="submit">Add to cart</button>
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>
