@@ -1,5 +1,7 @@
-package io.github.julwas797.bookstore;
+package io.github.julwas797.bookstore.util.cookies.impl;
 
+import io.github.julwas797.bookstore.util.cookies.CookieUtil;
+import io.github.julwas797.bookstore.util.serialization.SerializationUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package io.github.julwas797.bookstore.book;
+package io.github.julwas797.bookstore.obj.book;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

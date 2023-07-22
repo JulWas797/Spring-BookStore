@@ -31,7 +31,10 @@ dependencies {
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
     annotationProcessor 'org.projectlombok:lombok'
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.apache.groovy:groovy:4.0.13'
+    testImplementation 'org.spockframework:spock-core:2.4-M1-groovy-4.0'
 }
 
 tasks.named('test') {

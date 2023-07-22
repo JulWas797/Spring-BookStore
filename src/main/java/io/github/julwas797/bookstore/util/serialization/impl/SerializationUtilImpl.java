@@ -1,7 +1,8 @@
-package io.github.julwas797.bookstore;
+package io.github.julwas797.bookstore.util.serialization.impl;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.github.julwas797.bookstore.util.serialization.SerializationUtil;
 import lombok.SneakyThrows;
 import org.springframework.stereotype.Service;
 
@@ -12,9 +13,6 @@ import java.util.HashMap;
 
 @Service
 public class SerializationUtilImpl<K, V> implements SerializationUtil<K, V> {
-
-    private static final String CHAR_TO_REPLACE = "\"";
-    private static final String CHAR_REPLACEMENT = "%20";
     private final ObjectMapper mapper = new ObjectMapper();
 
     @Override

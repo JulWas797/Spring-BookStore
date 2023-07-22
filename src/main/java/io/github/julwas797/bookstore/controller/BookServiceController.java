@@ -1,7 +1,7 @@
 package io.github.julwas797.bookstore.controller;
 
 import com.google.common.collect.Iterables;
-import io.github.julwas797.bookstore.book.Book;
+import io.github.julwas797.bookstore.obj.book.Book;
 import io.github.julwas797.bookstore.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

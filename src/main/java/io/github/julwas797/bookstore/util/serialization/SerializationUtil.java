@@ -1,4 +1,4 @@
-package io.github.julwas797.bookstore;
+package io.github.julwas797.bookstore.util.serialization;
 
 import java.util.HashMap;
 

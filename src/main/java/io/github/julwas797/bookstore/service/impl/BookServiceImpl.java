@@ -1,7 +1,7 @@
 package io.github.julwas797.bookstore.service.impl;
 
-import io.github.julwas797.bookstore.book.Book;
-import io.github.julwas797.bookstore.book.BookGenre;
+import io.github.julwas797.bookstore.obj.book.Book;
+import io.github.julwas797.bookstore.obj.book.BookGenre;
 import io.github.julwas797.bookstore.repository.BookRepository;
 import io.github.julwas797.bookstore.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +38,6 @@ public class BookServiceImpl implements BookService {
 
     @PostConstruct
     private void initBooks() {
-        System.out.println("a");
         addBooks(
                 new Book("Brave New World", "Aldous Huxley", "Chatto and Windus", Year.parse("1939"), BookGenre.SCI_FI, 19.99),
                 new Book("The Road to Wigan Pier", "George Orwell", "Left Book Club", Year.parse("1937"), BookGenre.BIOGRAPHY, 29.99),
