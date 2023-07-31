@@ -11,23 +11,19 @@
 <body>
 	<header th:replace="fragments/header :: header"></header>
 	<div class="container p-5 mx-auto">
-		<div class="alert alert-info" role="alert">
-			<b th:text="${title}"/> was added to your cart!
-		</div>
-		<div class="m-2 ms-0">
-			<div class="row">
-				<div class="col-auto">
-					<button class="btn btn-primary" onclick="history.back()" type="submit">Back</button>
-				</div>
-				<div class="col-auto">
-					<a th:href="@{/cart}">
-						<button class="btn btn-primary" type="button">
-							Go to cart
-						</button>
-					</a>
-				</div>
-			</div>
-		</div>
+		<h1 class="fs-1">Hello!</h1>
+		<h3>Welcome to my Book Store!</h3>
+		<p>
+			This website was made using the power of <b style="color: #6db33f">Spring Framework</b> and <b
+				style="color: #086417">ThymeLeaf</b>.
+		</p>
+		<p>
+			Unit testing was designed in <b style="color: #73a926">Mockito</b>.
+		</p>
+		<p>
+			If you want to check my <b>GitHub profile</b> <a href="https://github.com/julwas797">click here</a> or open
+			up <a href="https://julwas797.github.io/">my website</a>.
+		</p>
 	</div>
 
 </body>

@@ -2,23 +2,31 @@ package io.github.julwas797.bookstore.util.serialization.impl
 
 import spock.lang.Specification
 
-import javax.persistence.EntityManager
-import java.nio.charset.Charset
-import java.nio.charset.StandardCharsets
-
 class SerializationUtilImplTest extends Specification {
 
     def serializationUtils = new SerializationUtilImpl<String, Integer>()
+    def deserialized = ["1": 2, "3": 4]
+    def serialized = '{"1":2,"3":4}'
 
-    def "hashmap should serialize properly (SerializeHashMap method)"() {
-        given: "a HashMap with String and Integer pairs"
-            def map = ["1":2,"3":4]
-        when: "the HashMap is serialized with SerializationUtil"
-            def result = serializationUtils.serializeHashMap map
-        then:
-
+    def "HashMap should be Serialized properly (SerializeHashMap method)"() {
+        given: "A HashMap with String and Integer pairs"
+        def map = deserialized
+        and: "A String containing expected output put thru URLEncoder"
+        def expected = URLEncoder.encode serialized, "UTF-8"
+        when: "The HashMap is serialized with SerializationUtil"
+        def result = serializationUtils.serializeHashMap map
+        then: "It should be serialized properly"
+        result == expected
     }
 
-//    def "DeserializeHashMap"() {
-//    }
+    def "HashMap should be Serialized properly (DeserializeHashMap method)"() {
+        given: "A serialized HashMap put thru URLDecoder"
+        def map = URLDecoder.decode serialized, "UTF-8"
+        and: "A HashMap containing expected output"
+        def expected = deserialized
+        when: "The serialized HashMap is deserialized with SerializationUtil"
+        def result = serializationUtils.deserializeHashMap map
+        then: "It should be deserialied properly"
+        result == expected
+    }
 }

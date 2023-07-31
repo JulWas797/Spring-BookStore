@@ -5,6 +5,7 @@
 	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
 	<script src="/bootstrap.min.js"></script>
 	<script src="/bootstrap.bundle.min.js"></script>
+	<script src="/bootstrap.autotheme.min.js"></script>
 	<link href="/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -23,7 +24,7 @@
 					<div class="row mb-3">
 						<a class="icon-link icon-link-hover" th:href="@{/book/{id}(id=${book.getId()})}">
 							Check details
-							<svg class="bi" aria-hidden="true">
+							<svg aria-hidden="true" class="bi">
 								<use xlink:href="#arrow-right"></use>
 							</svg>
 						</a>
